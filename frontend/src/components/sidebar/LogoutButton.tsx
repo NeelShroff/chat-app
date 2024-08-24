@@ -1,5 +1,6 @@
 import { LogOut } from "lucide-react";
-import useLogout from "../../hooks/useLogout"
+import useLogout from "../../hooks/useLogout";
+
 const LogoutButton = () => {
 	const { logout } = useLogout();
 

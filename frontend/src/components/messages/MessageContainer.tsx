@@ -3,7 +3,6 @@ import useConversation from "../../zustand/useConversation";
 import MessageInput from "./MessageInput";
 import Messages from "./Messages";
 
-
 import { MessageCircle } from "lucide-react";
 
 const MessageContainer = () => {

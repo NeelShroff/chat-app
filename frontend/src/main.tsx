@@ -8,13 +8,11 @@ import SocketContextProvider from "./context/SocketContext.tsx";
 ReactDOM.createRoot(document.getElementById("root")!).render(
 	// <React.StrictMode>
 	<BrowserRouter>
-	     <AuthContextProvider>
+		<AuthContextProvider>
 			<SocketContextProvider>
 				<App />
 			</SocketContextProvider>
-		 </AuthContextProvider>
-	
-		
+		</AuthContextProvider>
 	</BrowserRouter>
 	// </React.StrictMode>
 );
