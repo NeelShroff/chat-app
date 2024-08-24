@@ -1,4 +1,4 @@
-const Message = ({ message }: { message?: any }) => {
+const Message = ({ message,receiverId }: { message?: any,receiverId : string }) => {
 	const fromMe = message.fromMe;
 	const chatClass = fromMe ? "chat-end" : "chat-start";
 	const img = fromMe
@@ -13,7 +13,7 @@ const Message = ({ message }: { message?: any }) => {
 					<img alt='Tailwind CSS chat bubble component' src={img} />
 				</div>
 			</div>
-			<p className={`chat-bubble text-white ${bubbleBg} text-sm md:text-md`}>{message.body}</p>
+			<p className={`chat-bubble text-white ${bubbleBg} text-sm md:text-md`}>receiverId ? {message.body} : null</p>
 			<span className='chat-footer opacity-50 text-xs flex gap-1 items-center text-white'>22:59</span>
 		</div>
 	);
