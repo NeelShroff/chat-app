@@ -49,7 +49,15 @@ export const sendMessage = async (req: Request, res: Response) => {
 				},
 			});
 		}
-        res.status(201).json(newMessage);
+
+		// Socket io will go here
+		const receiverSocketId = getReceiverSocketId(receiverId);
+
+		if (receiverSocketId) {
+			io.to(receiverSocketId).emit("newMessage", newMessage);
+		}
+
+		res.status(201).json(newMessage);
 	} catch (error: any) {
 		console.error("Error in sendMessage: ", error.message);
 		res.status(500).json({ error: "Internal server error" });
